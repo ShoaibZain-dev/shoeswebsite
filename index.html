@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="GOMILA — Premium footwear for every journey. Shop modern running shoes, casual sneakers, sports shoes and premium sneakers online with fast delivery and easy returns.">
+    <meta name="keywords"
+        content="GOMILA, shoes, sneakers, premium footwear, running shoes, casual shoes, sports shoes, online shoe store">
+    <title>GOMILA — Step Into Your Best Journey | Premium Footwear</title>
+    <!-- Google Fonts — Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========== LOADING SCREEN ========== -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">GOMILA</div>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TOAST NOTIFICATION CONTAINER ========== -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ========== QUICK VIEW MODAL ========== -->
+    <div id="quick-view-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Product Quick View">
+                </div>
+                <div class="modal-details">
+                    <span id="modal-badge" class="modal-badge"></span>
+                    <h2 id="modal-name"></h2>
+                    <div id="modal-stars" class="stars"></div>
+                    <p id="modal-desc" class="modal-desc"></p>
+                    <div class="modal-price-row">
+                        <span id="modal-price" class="modal-price"></span>
+                        <span id="modal-old-price" class="modal-old-price"></span>
+                    </div>
+                    <div class="modal-sizes">
+                        <span class="modal-size-label">Size:</span>
+                        <div class="size-options">
+                            <button class="size-btn">7</button>
+                            <button class="size-btn active">8</button>
+                            <button class="size-btn">9</button>
+                            <button class="size-btn">10</button>
+                            <button class="size-btn">11</button>
+                        </div>
+                    </div>
+                    <button id="modal-add-cart" class="btn btn-primary btn-full">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                        </svg>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== 1. STICKY NAVIGATION BAR ========== -->
+    <header id="navbar" class="navbar">
+        <div class="container navbar-inner">
+            <!-- Logo -->
+            <a href="#home" class="navbar-logo">
+                <span class="logo-icon">G</span>
+                <span class="logo-text">GOMILA</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="navbar-links" id="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#reviews" class="nav-link">Reviews</a>
+                <a href="#complaints" class="nav-link">Complaints</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Cart & Hamburger -->
+            <div class="navbar-actions">
+                <button id="cart-btn" class="cart-btn" aria-label="Shopping cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1" />
+                        <circle cx="20" cy="21" r="1" />
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                    <span id="cart-count" class="cart-count">0</span>
+                </button>
+                <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#shop" class="mobile-link">Shop</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#reviews" class="mobile-link">Reviews</a>
+            <a href="#complaints" class="mobile-link">Complaints</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+        </div>
+    </header>
+
+    <!-- ========== 2. HERO / HOME SECTION ========== -->
+    <section id="home" class="hero">
+        <!-- Animated background shapes -->
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+
+        <div class="container hero-grid">
+            <div class="hero-content reveal fade-left">
+                <span class="hero-tag">New Collection 2026</span>
+                <h1 class="hero-title">Step Into Your <span class="highlight">Best Journey</span></h1>
+                <p class="hero-desc">Discover premium footwear crafted for performance, comfort, and style. GOMILA
+                    brings you world-class shoes designed to elevate every step you take.</p>
+                <div class="hero-btns">
+                    <a href="#shop" class="btn btn-primary btn-lg">
+                        Shop Now
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#categories" class="btn btn-outline btn-lg">Explore Collection</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <strong>200+</strong>
+                        <span>Shoe Models</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <strong>50K+</strong>
+                        <span>Happy Customers</span>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat">
+                        <strong>4.9</strong>
+                        <span>Avg. Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image reveal fade-right">
+                <div class="hero-image-wrapper">
+                    <img src="images/hero-shoe.jpg" alt="GOMILA Premium Red Sneaker" width="600" height="450">
+                    <div class="hero-image-badge">
+                        <span class="badge-price">$129</span>
+                        <span class="badge-label">Starting at</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 3. FEATURED SHOE CATEGORIES ========== -->
+    <section id="categories" class="section categories">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Categories</span>
+                <h2 class="section-title">Explore Our Collections</h2>
+                <p class="section-desc">Find the perfect pair for every occasion — from high-performance running shoes
+                    to everyday casual sneakers.</p>
+            </div>
+            <div class="categories-grid">
+                <!-- Running -->
+                <div class="category-card reveal fade-up" style="--delay: 0.1s">
+                    <div class="category-img">
+                        <img src="images/running-shoe.jpg" alt="Running Shoes" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Running Shoes</h3>
+                        <p>High-performance shoes built for speed and endurance.</p>
+                        <a href="#shop" class="btn btn-sm btn-outline">Explore →</a>
+                    </div>
+                </div>
+                <!-- Casual -->
+                <div class="category-card reveal fade-up" style="--delay: 0.2s">
+                    <div class="category-img">
+                        <img src="images/casual-shoe.jpg" alt="Casual Shoes" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Casual Shoes</h3>
+                        <p>Effortless style for your everyday lifestyle.</p>
+                        <a href="#shop" class="btn btn-sm btn-outline">Explore →</a>
+                    </div>
+                </div>
+                <!-- Sports -->
+                <div class="category-card reveal fade-up" style="--delay: 0.3s">
+                    <div class="category-img">
+                        <img src="images/sports-shoe.jpg" alt="Sports Shoes" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Sports Shoes</h3>
+                        <p>Engineered for maximum performance on the court.</p>
+                        <a href="#shop" class="btn btn-sm btn-outline">Explore →</a>
+                    </div>
+                </div>
+                <!-- Premium Sneakers -->
+                <div class="category-card reveal fade-up" style="--delay: 0.4s">
+                    <div class="category-img">
+                        <img src="images/premium-sneaker.jpg" alt="Premium Sneakers" loading="lazy">
+                    </div>
+                    <div class="category-info">
+                        <h3>Premium Sneakers</h3>
+                        <p>Luxury streetwear sneakers for the fashion-forward.</p>
+                        <a href="#shop" class="btn btn-sm btn-outline">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 4. ONLINE SHOPPING / PRODUCTS ========== -->
+    <section id="shop" class="section products-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Shop</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-desc">Hand-picked selections from our latest collection. Premium quality at prices
+                    you'll love.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.1s" data-name="GOMILA AeroRun X1"
+                    data-desc="Ultra-lightweight running shoe with adaptive cushioning and breathable knit upper. Designed for marathon-level performance."
+                    data-price="$159.99" data-old-price="$199.99" data-badge="-20%" data-rating="5"
+                    data-img="images/running-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge">-20%</span>
+                        <img src="images/running-shoe.jpg" alt="GOMILA AeroRun X1" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA AeroRun X1</h3>
+                        <p class="product-desc">Ultra-lightweight running shoe with adaptive cushioning.</p>
+                        <div class="stars" data-rating="5">★★★★★</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$159.99</span>
+                            <span class="product-old-price">$199.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.15s" data-name="GOMILA UrbanStep Classic"
+                    data-desc="Premium leather casual sneaker with memory foam insole. The perfect blend of sophistication and everyday comfort."
+                    data-price="$129.99" data-old-price="" data-badge="" data-rating="4"
+                    data-img="images/casual-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <img src="images/casual-shoe.jpg" alt="GOMILA UrbanStep Classic" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA UrbanStep Classic</h3>
+                        <p class="product-desc">Premium leather casual sneaker with memory foam insole.</p>
+                        <div class="stars" data-rating="4">★★★★☆</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$129.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.2s" data-name="GOMILA ProCourt Elite"
+                    data-desc="High-top sports shoe with ankle stabilization and impact-absorbing sole. Built for the court, designed for champions."
+                    data-price="$189.99" data-old-price="$229.99" data-badge="-17%" data-rating="5"
+                    data-img="images/sports-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge">-17%</span>
+                        <img src="images/sports-shoe.jpg" alt="GOMILA ProCourt Elite" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA ProCourt Elite</h3>
+                        <p class="product-desc">High-top sports shoe with ankle stabilization.</p>
+                        <div class="stars" data-rating="5">★★★★★</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$189.99</span>
+                            <span class="product-old-price">$229.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.25s" data-name="GOMILA StreetFlex 700"
+                    data-desc="Chunky-sole premium streetwear sneaker with suede and mesh mix. Trend-setting fashion meets all-day comfort."
+                    data-price="$174.99" data-old-price="" data-badge="NEW" data-rating="5"
+                    data-img="images/premium-sneaker.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge new-badge">NEW</span>
+                        <img src="images/premium-sneaker.jpg" alt="GOMILA StreetFlex 700" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA StreetFlex 700</h3>
+                        <p class="product-desc">Chunky-sole premium streetwear sneaker with suede mix.</p>
+                        <div class="stars" data-rating="5">★★★★★</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$174.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.3s" data-name="GOMILA NavyGlide Pro"
+                    data-desc="Sleek athletic trainer with responsive foam midsole and engineered mesh upper. Perfect for gym and everyday wear."
+                    data-price="$139.99" data-old-price="$169.99" data-badge="-18%" data-rating="4"
+                    data-img="images/product-shoe-1.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge">-18%</span>
+                        <img src="images/product-shoe-1.jpg" alt="GOMILA NavyGlide Pro" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA NavyGlide Pro</h3>
+                        <p class="product-desc">Sleek athletic trainer with responsive foam midsole.</p>
+                        <div class="stars" data-rating="4">★★★★☆</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$139.99</span>
+                            <span class="product-old-price">$169.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.35s" data-name="GOMILA FlameRunner Z"
+                    data-desc="Bold red performance shoe with aerodynamic design and energy-return sole technology. Feel the speed."
+                    data-price="$199.99" data-old-price="" data-badge="HOT" data-rating="5"
+                    data-img="images/hero-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge hot-badge">HOT</span>
+                        <img src="images/hero-shoe.jpg" alt="GOMILA FlameRunner Z" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA FlameRunner Z</h3>
+                        <p class="product-desc">Bold performance shoe with energy-return sole technology.</p>
+                        <div class="stars" data-rating="5">★★★★★</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$199.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.4s" data-name="GOMILA CloudWalk Lite"
+                    data-desc="Featherlight casual sneaker with cloud-cushion insole and organic leather upper. Walk on clouds, literally."
+                    data-price="$109.99" data-old-price="$139.99" data-badge="-21%" data-rating="4"
+                    data-img="images/casual-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge">-21%</span>
+                        <img src="images/casual-shoe.jpg" alt="GOMILA CloudWalk Lite" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA CloudWalk Lite</h3>
+                        <p class="product-desc">Featherlight casual sneaker with cloud-cushion insole.</p>
+                        <div class="stars" data-rating="4">★★★★☆</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$109.99</span>
+                            <span class="product-old-price">$139.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card reveal fade-up" style="--delay: 0.45s" data-name="GOMILA TrailBlazer X"
+                    data-desc="Rugged outdoor trail shoe with waterproof membrane and aggressive grip. Conquer every terrain with confidence."
+                    data-price="$219.99" data-old-price="" data-badge="NEW" data-rating="5"
+                    data-img="images/sports-shoe.jpg">
+                    <div class="product-img-wrap">
+                        <span class="discount-badge new-badge">NEW</span>
+                        <img src="images/sports-shoe.jpg" alt="GOMILA TrailBlazer X" loading="lazy">
+                        <div class="product-actions">
+                            <button class="action-btn quick-view-btn" aria-label="Quick View">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GOMILA TrailBlazer X</h3>
+                        <p class="product-desc">Rugged outdoor trail shoe with waterproof membrane.</p>
+                        <div class="stars" data-rating="5">★★★★★</div>
+                        <div class="product-price-row">
+                            <span class="product-price">$219.99</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm add-to-cart-btn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="9" cy="21" r="1" />
+                                <circle cx="20" cy="21" r="1" />
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                            </svg>
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 5. SERVICES SECTION ========== -->
+    <section id="services" class="section services-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Services</span>
+                <h2 class="section-title">What We Offer</h2>
+                <p class="section-desc">Experience premium shopping with services designed around you.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal fade-up" style="--delay: 0.1s">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13" />
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                            <circle cx="5.5" cy="18.5" r="2.5" />
+                            <circle cx="18.5" cy="18.5" r="2.5" />
+                        </svg>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Free express shipping on orders over $100. Get your shoes delivered in 2–4 business days
+                        worldwide.</p>
+                </div>
+                <div class="service-card reveal fade-up" style="--delay: 0.2s">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                        </svg>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>Every pair is crafted with the finest materials and undergoes rigorous quality testing before
+                        reaching you.</p>
+                </div>
+                <div class="service-card reveal fade-up" style="--delay: 0.3s">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polyline points="1 4 1 10 7 10" />
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                        </svg>
+                    </div>
+                    <h3>Easy Returns</h3>
+                    <p>Not the right fit? Return any unworn pair within 30 days for a full refund — no questions asked.
+                    </p>
+                </div>
+                <div class="service-card reveal fade-up" style="--delay: 0.4s">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>
+                    </div>
+                    <h3>Secure Shopping</h3>
+                    <p>Shop with confidence. Your payment data is protected by 256-bit SSL encryption and secure
+                        gateways.</p>
+                </div>
+                <div class="service-card reveal fade-up" style="--delay: 0.5s">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is available around the clock via chat, email, or phone to help you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 6. WHY CHOOSE GOMILA ========== -->
+    <section id="why-choose" class="section why-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Why GOMILA</span>
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-desc">We don't just sell shoes — we deliver confidence, comfort, and craftsmanship
+                    with every pair.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal fade-up" style="--delay: 0.1s">
+                    <div class="why-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>High-Quality Materials</h3>
+                    <p>Premium leather, breathable mesh, and sustainable materials sourced from trusted global
+                        suppliers.</p>
+                </div>
+                <div class="why-card reveal fade-up" style="--delay: 0.2s">
+                    <div class="why-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </div>
+                    <h3>Comfortable Designs</h3>
+                    <p>Ergonomic footbeds and cushioned soles engineered for all-day comfort from morning to night.</p>
+                </div>
+                <div class="why-card reveal fade-up" style="--delay: 0.3s">
+                    <div class="why-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3>Modern Fashion</h3>
+                    <p>Trend-forward styles designed by world-class designers to keep you looking sharp in every season.
+                    </p>
+                </div>
+                <div class="why-card reveal fade-up" style="--delay: 0.4s">
+                    <div class="why-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Luxury quality without the luxury price tag. Fair pricing with frequent seasonal discounts.</p>
+                </div>
+                <div class="why-card reveal fade-up" style="--delay: 0.5s">
+                    <div class="why-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3>Trusted Service</h3>
+                    <p>Thousands of 5-star reviews and a dedicated team that truly cares about your experience.</p>
+                </div>
+            </div>
+            <!-- Animated counters -->
+            <div class="counters-row reveal fade-up">
+                <div class="counter-item">
+                    <span class="counter-number" data-target="50000">0</span>
+                    <span class="counter-label">Happy Customers</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" data-target="200">0</span>
+                    <span class="counter-label">Shoe Models</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" data-target="35">0</span>
+                    <span class="counter-label">Countries</span>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-number" data-target="15">0</span>
+                    <span class="counter-label">Awards Won</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 7. CUSTOMER REVIEWS ========== -->
+    <section id="reviews" class="section reviews-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-desc">Real reviews from real people who love their GOMILA shoes.</p>
+            </div>
+            <div class="carousel reveal fade-up">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 0">AS</div>
+                            <div>
+                                <h4 class="review-name">Amelia S.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"The AeroRun X1 are the best running shoes I've ever owned. Incredibly
+                            lightweight yet so supportive. I've shaved 2 minutes off my 5K time!"</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 200">JD</div>
+                            <div>
+                                <h4 class="review-name">James D.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Premium quality at a fair price. The UrbanStep Classic looks way more
+                            expensive than it is. I get compliments every time I wear them."</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 120">MK</div>
+                            <div>
+                                <h4 class="review-name">Maria K.</h4>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Fast shipping and the shoes arrived perfectly packaged. The FlameRunner
+                            Z is stylish and comfortable. Only wish they came in more colors!"</p>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 280">RP</div>
+                            <div>
+                                <h4 class="review-name">Robert P.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"I've ordered three pairs now and each one has exceeded my expectations.
+                            GOMILA's customer service is top-notch — they even helped me find the perfect size."</p>
+                    </div>
+                    <!-- Review 5 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 40">LT</div>
+                            <div>
+                                <h4 class="review-name">Lisa T.</h4>
+                                <div class="stars">★★★★★</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"The ProCourt Elite has completely transformed my basketball game. The
+                            ankle support is incredible and they look absolutely fire on the court."</p>
+                    </div>
+                    <!-- Review 6 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-avatar" style="--hue: 330">DW</div>
+                            <div>
+                                <h4 class="review-name">David W.</h4>
+                                <div class="stars">★★★★☆</div>
+                            </div>
+                        </div>
+                        <p class="review-text">"StreetFlex 700 is my daily go-to. The chunky sole is so comfortable for
+                            walking around the city and I love the gray-red color combo."</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button id="carousel-prev" class="carousel-btn" aria-label="Previous review">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
+                    <button id="carousel-next" class="carousel-btn" aria-label="Next review">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 8. ONLINE ORDER SECTION ========== -->
+    <section id="order" class="section order-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Order Online</span>
+                <h2 class="section-title">Place Your Order</h2>
+                <p class="section-desc">Fill in the details below and we'll process your order immediately.</p>
+            </div>
+            <form id="order-form" class="form-card reveal fade-up" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="order-name">Full Name *</label>
+                        <input type="text" id="order-name" placeholder="John Doe" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-email">Email Address *</label>
+                        <input type="email" id="order-email" placeholder="john@example.com" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-phone">Phone Number *</label>
+                        <input type="tel" id="order-phone" placeholder="+1 (555) 000-0000" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-product">Select Product *</label>
+                        <select id="order-product" required>
+                            <option value="">Choose a product...</option>
+                            <option value="AeroRun X1">GOMILA AeroRun X1 — $159.99</option>
+                            <option value="UrbanStep Classic">GOMILA UrbanStep Classic — $129.99</option>
+                            <option value="ProCourt Elite">GOMILA ProCourt Elite — $189.99</option>
+                            <option value="StreetFlex 700">GOMILA StreetFlex 700 — $174.99</option>
+                            <option value="NavyGlide Pro">GOMILA NavyGlide Pro — $139.99</option>
+                            <option value="FlameRunner Z">GOMILA FlameRunner Z — $199.99</option>
+                            <option value="CloudWalk Lite">GOMILA CloudWalk Lite — $109.99</option>
+                            <option value="TrailBlazer X">GOMILA TrailBlazer X — $219.99</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-size">Shoe Size *</label>
+                        <select id="order-size" required>
+                            <option value="">Select size...</option>
+                            <option value="6">US 6 / EU 39</option>
+                            <option value="7">US 7 / EU 40</option>
+                            <option value="8">US 8 / EU 41</option>
+                            <option value="9">US 9 / EU 42</option>
+                            <option value="10">US 10 / EU 43</option>
+                            <option value="11">US 11 / EU 44</option>
+                            <option value="12">US 12 / EU 45</option>
+                            <option value="13">US 13 / EU 46</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="order-qty">Quantity *</label>
+                        <input type="number" id="order-qty" min="1" max="10" value="1" required>
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="order-address">Delivery Address *</label>
+                    <textarea id="order-address" rows="3" placeholder="Enter your full delivery address..."
+                        required></textarea>
+                    <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                    Place Order
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== 9. COMPLAINTS SECTION ========== -->
+    <section id="complaints" class="section complaints-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Support</span>
+                <h2 class="section-title">Submit a Complaint</h2>
+                <p class="section-desc">We take every issue seriously. Let us know what went wrong and we'll make it
+                    right.</p>
+            </div>
+            <form id="complaint-form" class="form-card reveal fade-up" novalidate>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="comp-name">Your Name *</label>
+                        <input type="text" id="comp-name" placeholder="Jane Smith" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comp-email">Email Address *</label>
+                        <input type="email" id="comp-email" placeholder="jane@example.com" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comp-order">Order Number *</label>
+                        <input type="text" id="comp-order" placeholder="GM-2026-XXXXX" required>
+                        <span class="error-msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="comp-category">Complaint Category *</label>
+                        <select id="comp-category" required>
+                            <option value="">Select category...</option>
+                            <option value="Defective Product">Defective Product</option>
+                            <option value="Wrong Size">Wrong Size Delivered</option>
+                            <option value="Late Delivery">Late Delivery</option>
+                            <option value="Missing Item">Missing Item</option>
+                            <option value="Payment Issue">Payment Issue</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-msg"></span>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="comp-message">Describe Your Issue *</label>
+                    <textarea id="comp-message" rows="4" placeholder="Please describe your complaint in detail..."
+                        required></textarea>
+                    <span class="error-msg"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-full">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                    Submit Complaint
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== 10. CONTACT SECTION ========== -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal fade-up">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">Have questions?Reach out to our team anytime.</p>
+            </div>
+            <div class="contact-grid">
+                <!-- Info cards -->
+                <div class="contact-info reveal fade-left">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@gomila.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>350 Fifth Avenue, New York, NY 10118</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon – Fri: 9 AM – 8 PM<br>Sat – Sun: 10 AM – 6 PM</p>
+                        </div>
+                    </div>
+                    <!-- Social icons -->
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter / X">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact form + map -->
+                <div class="contact-form-wrap reveal fade-right">
+                    <form id="contact-form" class="form-card" novalidate>
+                        <div class="form-group">
+                            <label for="contact-name">Your Name *</label>
+                            <input type="text" id="contact-name" placeholder="Your full name" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" placeholder="you@example.com" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-subject">Subject *</label>
+                            <input type="text" id="contact-subject" placeholder="How can we help?" required>
+                            <span class="error-msg"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" rows="4" placeholder="Write your message..."
+                                required></textarea>
+                            <span class="error-msg"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message</button>
+                    </form>
+                    <!-- Map Placeholder -->
+                    <div class="map-placeholder">
+                        <div class="map-inner">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--red)"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <p>GOMILA HQ — 350 Fifth Avenue, New York</p>
+                            <span class="map-coords">40.7484° N, 73.9857° W</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 11. NEWSLETTER SECTION ========== -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content reveal fade-up">
+                <h2>Stay in the Loop</h2>
+                <p>Subscribe to get exclusive drops, early access to sales, and style inspiration delivered to your
+                    inbox.</p>
+                <form id="newsletter-form" class="newsletter-form" novalidate>
+                    <div class="newsletter-input-wrap">
+                        <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-white">Subscribe</button>
+                    </div>
+                    <span class="newsletter-note">No spam, ever. Unsubscribe anytime.</span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 12. FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="#home" class="navbar-logo">
+                        <span class="logo-icon">G</span>
+                        <span class="logo-text">GOMILA</span>
+                    </a>
+                    <p>Premium footwear crafted for performance, comfort, and style. Step into your best journey with
+                        GOMILA.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter / X">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#shop">Shop</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Links -->
+                <div class="footer-links">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="#order">Place Order</a></li>
+                        <li><a href="#complaints">File Complaint</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            +1 (555) 123-4567
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            support@gomila.com
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            New York, NY 10118
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 GOMILA. All rights reserved. Designed with ❤️ for premium footwear.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
